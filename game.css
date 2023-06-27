@@ -44,13 +44,14 @@ button {
 .enemy {
     bottom: -400px;
     position: absolute;
-    transition: all 0.5s;
+    transition: all 0.4s;
 
     width: 180px;
     height: 280px;
     border-radius: 100%;
-    background-color: linear-gradient(#240C2C,black);
+    background: linear-gradient(#240C2C,black);
     box-shadow: inset 0 1em 1em coral;
+    overflow: hidden;
 
 }
 
@@ -71,7 +72,7 @@ button {
     height: 30px;
     width: 30px;
     left: 5px;
-    bottom: 30px;
+    bottom: 70px;
 
     background-color: #222;
     color: #555;
@@ -80,6 +81,7 @@ button {
     border-radius: 15px;
     border-bottom: 20px solid #111;
     border-right: 2px solid brown;
+    transition: all 0.2s;
 }
 
 .enemy.showing {
@@ -87,7 +89,19 @@ button {
 }
 
 .enemy.shooting { 
-    background-color: red;
+    background: #471515;
+    
+    
+}
+
+.enemy.shooting::after {
+    content: "*";
+    left: 20px;
+    color:coral;
+    font-size: 4em;
+    transform: scale(2);
+
+    box-shadow: 20px -10px 30px black;
 }
 
 #enemy1 { left:5px;}
@@ -97,6 +111,15 @@ button {
 #enemy5 { left:645px;} 
 
 .enemy.dead { 
-    background-color: grey;
-    height: 50px;
+    background: #222;
+    transform: rotate(-90deg);
+    bottom: -140px;
+
+
 }
+
+.enemy.dead:before {
+    content: "*_*";
+    color: #555;
+}
+
